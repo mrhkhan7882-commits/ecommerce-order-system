@@ -51,3 +51,4 @@ python legb_demo.py     # LEGB scope demo
 - **Payment status** must be exactly `"paid"` or `"pending"` (lower-case). Unlike order IDs and customer names, it is NOT trimmed or case-folded: `"Paid"` and `" paid"` are rejected.
 - **Overflow / size limit:** an order whose line total, subtotal, discount, shipping or total is not finite (e.g. `1e308 x 2`, or an integer price like `10**400`), or whose subtotal or total is above `MAX_ORDER_AMOUNT` (1 trillion, in `config.py`), is rejected before stock changes.
 - **Money** is calculated with `decimal.Decimal` (in `utils.py`) and rounded to whole cents, half a cent rounds up. Results are returned as plain numbers. A product **price with more than 2 decimal places** (e.g. `199.995`) is rejected, because it could push a subtotal across a discount or free-shipping boundary.
+Project development is continuing.
